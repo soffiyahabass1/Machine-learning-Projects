@@ -1,0 +1,63 @@
+# Lung Cancer Classification Using CNN
+
+This project implements a Convolutional Neural Network (CNN) for classifying lung CT scan images as either cancerous or non-cancerous.
+
+##  Dataset
+
+- **Source**: [Kaggle - Lung Cancer Images]
+- The dataset contains labeled images of lungs, divided into two categories:
+  - Cancerous
+  - Non-Cancerous
+
+##  Model Architecture
+
+The custom CNN was built using PyTorch and consists of:
+
+- Multiple convolutional layers with batch normalization and ELU activations
+- Depthwise convolution to reduce parameters
+- Average pooling layers
+- Dropout for regularization
+- Softmax for final classification
+
+> The model is dynamically defined to determine the flattened shape before the fully connected layer is applied.
+
+##  Training
+
+- Optimizer: `NAdam`
+- Loss Function: `CrossEntropyLoss`
+- Epochs: 15
+- Learning Rate: `1e-5`
+- Evaluation using separate test dataset
+
+##  Performance Metrics
+
+| Metric      | Value    |
+|-------------|----------|
+| **Accuracy**| 93.03%   |
+| **Precision** | 92.32% |
+| **Recall**    | 93.03% |
+| **F1-Score**  | 92.65% |
+
+Additional evaluation includes:
+- ✅ Confusion Matrix
+- ✅ ROC Curve
+- ✅ Precision-Recall Curve
+
+##  Visualizations
+
+- Accuracy vs Epochs
+- Confusion Matrix (TorchMetrics)
+- ROC-AUC Curve
+- Precision-Recall Curve
+
+## Requirements
+
+- Python 3.7+
+- PyTorch
+- TorchMetrics
+- matplotlib
+- numpy
+
+Install dependencies:
+```bash
+pip install torch torchvision torchmetrics matplotlib numpy
